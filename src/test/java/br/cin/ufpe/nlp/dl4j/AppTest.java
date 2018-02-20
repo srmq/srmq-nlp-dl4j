@@ -3,8 +3,8 @@ package br.cin.ufpe.nlp.dl4j;
 import java.io.File;
 import java.io.IOException;
 
-import br.cin.ufpe.nlp.api.TfIdfComputerService;
-import br.cin.ufpe.nlp.api.TfIdfInfo;
+import br.cin.ufpe.nlp.api.bagofwords.TfIdfComputerService;
+import br.cin.ufpe.nlp.api.bagofwords.TfIdfInfo;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

@@ -12,7 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<nd4j.version>0.6.1-SNAPSHOT</nd4j.version>
+		<nd4j.version>0.7.3-SNAPSHOT</nd4j.version>
 	</properties>
 
 	<dependencies>
@@ -26,22 +26,28 @@
 			<groupId>org.nd4j</groupId>
 			<artifactId>nd4j-native</artifactId>
 			<version>${nd4j.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.deeplearning4j</groupId>
 			<artifactId>deeplearning4j-nlp</artifactId>
 			<version>${nd4j.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.deeplearning4j</groupId>
 			<artifactId>deeplearning4j-nlp-uima</artifactId>
 			<version>${nd4j.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.cleartk</groupId>
-					<artifactId>cleartk-type-system</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.felix</groupId>
@@ -53,17 +59,7 @@
 			<groupId>br.cin.ufpe.nlp</groupId>
 			<artifactId>srmq-nlp-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.cleartk</groupId>
-			<artifactId>cleartk-type-system</artifactId>
-			<version>2.0.0</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.uima</groupId>
-			<artifactId>uimafit-core</artifactId>
-			<version>2.0.0</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -76,8 +72,8 @@
 				<configuration>
 					<instructions>
 
-						<Import-Package>br.cin.ufpe.nlp.api,*;resolution:=optional</Import-Package>
-						<Export-Package>br.cin.ufpe.nlp.api</Export-Package>
+						<Import-Package>br.cin.ufpe.nlp.api.bagofwords,*;resolution:=optional</Import-Package>
+						<Export-Package></Export-Package>
 						<Private-Package>br.cin.ufpe.nlp.dl4j.*</Private-Package>
 						<Bundle-Activator>br.cin.ufpe.nlp.dl4j.Activator</Bundle-Activator>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
@@ -85,7 +81,7 @@
 						<Embed-Transitive>true</Embed-Transitive>
 						<Include-Resource>
 							{maven-resources},
-							{maven-dependencies},@cleartk-type-system-2.0.0.jar
+							{maven-dependencies}
 						</Include-Resource>
 						<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
 					</instructions>

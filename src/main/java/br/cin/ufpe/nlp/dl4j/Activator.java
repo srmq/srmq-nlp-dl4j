@@ -1,18 +1,11 @@
 package br.cin.ufpe.nlp.dl4j;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.net.URL;
-import java.nio.file.Path;
 import java.util.Hashtable;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import br.cin.ufpe.nlp.api.TfIdfComputerService;
+import br.cin.ufpe.nlp.api.bagofwords.TfIdfComputerService;
 
 public class Activator implements BundleActivator {
 
