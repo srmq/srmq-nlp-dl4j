@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -8,12 +9,34 @@
 	<packaging>bundle</packaging>
 
 	<name>srmq-nlp-dl4j</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/srmq/srmq-nlp-dl4j</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<nd4j.version>0.8.0</nd4j.version>
 	</properties>
+
+	<repositories>
+		<!-- Unfortunately, generated jar size of this project is too big to put 
+			into appspot repository -->
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+			<id>srmq-maven-repo</id>
+			<name>SRMQ's development repository</name>
+			<url>https://srmq-maven-repo.appspot.com</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
 
 	<dependencies>
 		<dependency>
