@@ -107,7 +107,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-
+						<_noee>true</_noee>
 						<Import-Package>br.cin.ufpe.nlp.api.bagofwords,*;resolution:=optional</Import-Package>
 						<Export-Package></Export-Package>
 						<Private-Package>br.cin.ufpe.nlp.dl4j.*</Private-Package>
